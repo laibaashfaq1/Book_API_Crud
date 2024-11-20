@@ -3,9 +3,14 @@ import BookForm from "@/components/book-form";
 import { Book } from "@/data";
 
 export default async function Home() {
-  const res = await fetch("http://localhost:3000/api/books");
-  const books: Book[] = await res.json();
-  console.log(books);
+  let books: Book[] = [];
+  try {
+    const res = await fetch("http://localhost:3000/api/books");
+    books = await res.json();
+  } catch (error) {
+    console.error("Failed to fetch books:", error);
+  }
+
   return (
     <div className="container mx-auto">
       <BookForm />
