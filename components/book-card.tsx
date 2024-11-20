@@ -4,7 +4,7 @@ import {Card,CardContent,CardDescription,CardFooter,CardHeader,CardTitle,} from 
 import Image from "next/image";
 import { Button } from "../components/ui/button";
 
-const BookCard = ({ author, id, imgUrl, title }: Book) => {
+const BookCard = ({ author, imgUrl, title }: Book) => {
   return (
     <Card className="h-full w-full max-w-sm">
       <CardHeader className="p-0">
